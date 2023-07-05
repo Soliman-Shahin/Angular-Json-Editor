@@ -1,2 +1,140 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~jsoneditor/dist/jsoneditor.min.css";
+
+html {
+  background-color: #202124;
+  padding: 2rem 4rem;
+}
+
+.jsoneditor {
+  border: none !important;
+  .jsoneditor-menu {
+    background-color: #202124;
+    border: none !important;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    .jsoneditor-poweredBy {
+      display: none !important;
+    }
+    .jsoneditor-search {
+      .jsoneditor-results {
+        color: #3883fa;
+        align-items: center;
+        display: flex;
+      }
+      .jsoneditor-frame {
+        border-radius: 7px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  .jsoneditor-anchor {
+    .jsoneditor-contextmenu-root {
+      .jsoneditor-contextmenu {
+        .jsoneditor-menu {
+          height: max-content;
+          display: block;
+        }
+      }
+    }
+  }
+  .jsoneditor-navigation-bar {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    border-radius: 7px 7px 0 0;
+    padding-inline: 1rem;
+    border: none;
+    color: #3883fa;
+    background-color: #303443;
+  }
+  .jsoneditor-outer {
+    height: 80vh !important;
+    td.jsoneditor-tree {
+      background: transparent !important;
+    }
+    .jsoneditor-tree {
+      background: #4c4c4c !important;
+      border-radius: 0 0 7px 7px;
+      .jsoneditor-readonly {
+        color: #ffc700;
+      }
+      .jsoneditor-popover,
+      .jsoneditor-schema-error,
+      .jsoneditor td,
+      .jsoneditor textarea,
+      .jsoneditor th,
+      .jsoneditor-field,
+      .jsoneditor-value,
+      pre.jsoneditor-preview {
+        color: #3883fa;
+      }
+      .jsoneditor-value.jsoneditor-string {
+        color: #06df06 !important;
+      }
+      .jsoneditor-value.jsoneditor-number {
+        color: #f42c15 !important;
+      }
+      .jsoneditor-field.jsoneditor-highlight,
+      .jsoneditor-field[contenteditable="true"]:focus,
+      .jsoneditor-field[contenteditable="true"]:hover,
+      .jsoneditor-value.jsoneditor-highlight,
+      .jsoneditor-value[contenteditable="true"]:focus,
+      .jsoneditor-value[contenteditable="true"]:hover {
+        background-color: #6c7a86ab;
+        border: none;
+        border-radius: 5px;
+      }
+    }
+    textarea.jsoneditor-text {
+      color: #3f89ff !important;
+      border-radius: 7px 7px 0 0;
+      background: #4c4c4c !important;
+      padding: 1rem;
+    }
+    .ace-jsoneditor.ace_editor,
+    textarea.jsoneditor-text.ace_editor {
+      border-radius: 7px 7px 0 0;
+    }
+    .ace-jsoneditor {
+      .ace_gutter {
+        background: #303443;
+        color: #6c7a86;
+      }
+      .ace_scroller {
+        background: #4c4c4c;
+      }
+      .ace_text-layer {
+        color: #3f89ff;
+      }
+      .ace_variable {
+        color: #4cfffa;
+      }
+      .ace_indent-guide {
+        background: none;
+      }
+      .ace_string {
+        color: #06df06;
+      }
+      .ace_marker-layer .ace_active-line {
+        background: #6c7a86;
+      }
+      .ace_marker-layer .ace_selection {
+        background: #303443;
+      }
+    }
+  }
+  .jsoneditor-statusbar {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    border-radius: 0 0 7px 7px;
+    padding-inline: 1rem;
+    border: none;
+    color: #fff;
+    background-color: #303443;
+  }
+}
