@@ -3,18 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-import { AngJsoneditorModule } from '@maaxgr/ang-jsoneditor'
+import { AngJsoneditorModule } from '@maaxgr/ang-jsoneditor';
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
+    FontAwesomeModule,
     AppRoutingModule,
-    AngJsoneditorModule
+    AngJsoneditorModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
