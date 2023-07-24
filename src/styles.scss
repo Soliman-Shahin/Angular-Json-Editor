@@ -1,9 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~jsoneditor/dist/jsoneditor.min.css";
 
+@import url("https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@500&family=Poppins:ital,wght@1,400&family=Signika+Negative&display=swap");
+
 html {
   background-color: #202124;
   padding: 2rem 4rem;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+section,
+b,
+strong,
+small,
+ul,
+ol,
+li,
+button,
+a,
+table,
+thead,
+tbody,
+tr,
+td,
+th {
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .jsoneditor {
