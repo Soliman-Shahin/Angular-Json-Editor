@@ -1,48 +1,80 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~jsoneditor/dist/jsoneditor.min.css";
+// Define variables
+$font-family: "Poppins", sans-serif;
+$white: #fff;
+$bg-color: #202124;
+$warn-color: #f42c15;
+$gold-color: #ffc700;
+$primary-color: #3883fa;
+$light-primary: #6c7a86;
+$secondary-color: #06df06;
+$light-secondary: #4cfffa;
+$background-color: #4c4c4c;
+$dark-background: #303443;
 
-@import url("https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@500&family=Poppins:ital,wght@1,400&family=Signika+Negative&display=swap");
+$page-padding: 2rem 4rem;
+$bar-height: 35px;
+$editor-header-height: 4rem;
+$editor-height: 75vh;
+$padding-1: 1rem;
+$radius: 7px;
+$radius-top: 7px 7px 0 0;
+$radius-bottom: 0 0 7px 7px;
 
-html {
-  background-color: #202124;
-  padding: 2rem 4rem;
+// Define mixins
+@mixin font($family: $font-family, $size: 16px) {
+  font-family: $family !important;
+  font-size: $size;
 }
 
-html,
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-span,
-div,
-section,
-b,
-strong,
-small,
-ul,
-ol,
-li,
-button,
-a,
-table,
-thead,
-tbody,
-tr,
-td,
-th {
-  font-family: 'Poppins', sans-serif !important;
+// Import external stylesheets
+@import "~jsoneditor/dist/jsoneditor.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@500&family=Poppins:ital,wght@1,400&family=Signika+Negative&display=swap");
+
+// Use nesting and variables
+html {
+  background-color: $bg-color;
+  padding: $page-padding;
+
+  // Use mixins
+  @include font();
+
+  &,
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  div,
+  section,
+  b,
+  strong,
+  small,
+  ul,
+  ol,
+  li,
+  button,
+  a,
+  table,
+  thead,
+  tbody,
+  tr,
+  td,
+  th {
+    font-family: $font-family !important;
+  }
 }
 
 .jsoneditor {
   border: none !important;
   .jsoneditor-menu {
-    background-color: #202124;
+    background-color: $bg-color;
     border: none !important;
-    height: 4rem;
+    height: $editor-header-height;
     display: flex;
     align-items: center;
     .jsoneditor-poweredBy {
@@ -50,13 +82,13 @@ th {
     }
     .jsoneditor-search {
       .jsoneditor-results {
-        color: #3883fa;
+        color: $primary-color;
         align-items: center;
         display: flex;
       }
       .jsoneditor-frame {
-        border-radius: 7px;
-        height: 30px;
+        border-radius: $radius;
+        height: $bar-height;
         display: flex;
         align-items: center;
         margin-top: 0.5rem;
@@ -74,25 +106,25 @@ th {
     }
   }
   .jsoneditor-navigation-bar {
-    height: 35px;
+    height: $bar-height;
     display: flex;
     align-items: center;
-    border-radius: 7px 7px 0 0;
-    padding-inline: 1rem;
+    border-radius: $radius-top;
+    padding-inline: $padding-1;
     border: none;
-    color: #3883fa;
-    background-color: #303443;
+    color: $primary-color;
+    background-color: $dark-background;
   }
   .jsoneditor-outer {
-    height: 80vh !important;
+    height: $editor-height !important;
     td.jsoneditor-tree {
       background: transparent !important;
     }
     .jsoneditor-tree {
-      background: #4c4c4c !important;
-      border-radius: 0 0 7px 7px;
+      background: $background-color !important;
+      border-radius: $radius-bottom;
       .jsoneditor-readonly {
-        color: #ffc700;
+        color: $gold-color;
       }
       .jsoneditor-popover,
       .jsoneditor-schema-error,
@@ -102,13 +134,13 @@ th {
       .jsoneditor-field,
       .jsoneditor-value,
       pre.jsoneditor-preview {
-        color: #3883fa;
+        color: $primary-color;
       }
       .jsoneditor-value.jsoneditor-string {
-        color: #06df06 !important;
+        color: $secondary-color !important;
       }
       .jsoneditor-value.jsoneditor-number {
-        color: #f42c15 !important;
+        color: $warn-color !important;
       }
       .jsoneditor-field.jsoneditor-highlight,
       .jsoneditor-field[contenteditable="true"]:focus,
@@ -116,57 +148,57 @@ th {
       .jsoneditor-value.jsoneditor-highlight,
       .jsoneditor-value[contenteditable="true"]:focus,
       .jsoneditor-value[contenteditable="true"]:hover {
-        background-color: #6c7a86ab;
+        background-color: $light-primary;
         border: none;
-        border-radius: 5px;
+        border-radius: $radius;
       }
     }
     textarea.jsoneditor-text {
-      color: #3f89ff !important;
-      border-radius: 7px 7px 0 0;
-      background: #4c4c4c !important;
-      padding: 1rem;
+      color: $primary-color !important;
+      border-radius: $radius-top;
+      background: $background-color !important;
+      padding: $padding-1;
     }
     .ace-jsoneditor.ace_editor,
     textarea.jsoneditor-text.ace_editor {
-      border-radius: 7px 7px 0 0;
+      border-radius: $radius-top;
     }
     .ace-jsoneditor {
       .ace_gutter {
-        background: #303443;
-        color: #6c7a86;
+        background: $dark-background;
+        color: $light-primary;
       }
       .ace_scroller {
-        background: #4c4c4c;
+        background: $background-color;
       }
       .ace_text-layer {
-        color: #3f89ff;
+        color: $primary-color;
       }
       .ace_variable {
-        color: #4cfffa;
+        color: $light-secondary;
       }
       .ace_indent-guide {
         background: none;
       }
       .ace_string {
-        color: #06df06;
+        color: $secondary-color;
       }
       .ace_marker-layer .ace_active-line {
-        background: #6c7a86;
+        background: $light-primary;
       }
       .ace_marker-layer .ace_selection {
-        background: #303443;
+        background: $dark-background;
       }
     }
   }
   .jsoneditor-statusbar {
-    height: 35px;
+    height: $bar-height;
     display: flex;
     align-items: center;
-    border-radius: 0 0 7px 7px;
-    padding-inline: 1rem;
+    border-radius: $radius-bottom;
+    padding-inline: $padding-1;
     border: none;
-    color: #fff;
-    background-color: #303443;
+    color: $white;
+    background-color: $dark-background;
   }
 }
