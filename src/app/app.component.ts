@@ -1,12 +1,17 @@
 import { AppService } from './shared/services/app.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { JsonEditorComponent, JsonEditorOptions } from '@maaxgr/ang-jsoneditor';
+import {
+  JsonEditorComponent,
+  JsonEditorMode,
+  JsonEditorOptions,
+} from '@maaxgr/ang-jsoneditor';
 import {
   faFileImport,
   faFileExport,
   faRemoveFormat,
 } from '@fortawesome/free-solid-svg-icons';
 import exportFromJSON from 'export-from-json';
+import { env } from '../assets/env';
 
 @Component({
   selector: 'app-root',
@@ -17,8 +22,9 @@ export class AppComponent implements OnInit {
   @ViewChild(JsonEditorComponent, { static: false })
   editor!: JsonEditorComponent;
 
-  title = 'online json editor';
-  json: any;
+  title = env.title;
+
+  json: any = [];
 
   public editorOptions: JsonEditorOptions;
   public initialData: any;
@@ -30,13 +36,8 @@ export class AppComponent implements OnInit {
 
   constructor(private appService: AppService) {
     this.editorOptions = new JsonEditorOptions();
-    this.editorOptions.modes = ['code', 'text', 'form', 'tree', 'view'];
-    this.initialData = {
-      success: {
-        message: 'Welcome to JSON Editor',
-        status_code: 200,
-      },
-    };
+    this.editorOptions.modes = env.editorOptions.modes as JsonEditorMode[];
+    this.initialData = env.initialData;
     this.json = this.initialData;
     this.visibleData = this.initialData;
   }
@@ -66,8 +67,8 @@ export class AppComponent implements OnInit {
     let modifiedJson: any = this.editor.get();
     this.appService.jsonData.next(modifiedJson);
     let exportData = this.json;
-    let fileName = 'online-json-editor';
-    let exportType: any = 'json';
+    let fileName = env.fileName;
+    let exportType: any = env.fileType;
     exportFromJSON({ data: exportData, fileName, exportType });
   }
 
