@@ -1,0 +1,30 @@
+// Define mixins
+@mixin font($family: $font-family, $size: 16px) {
+  font-family: $family !important;
+  font-size: $size;
+}
+
+// Import external stylesheets
+@import "~jsoneditor/dist/jsoneditor.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@500&family=Poppins:ital,wght@1,400&family=Signika+Negative&display=swap");
+
+$font-family: "Poppins", sans-serif;
+$white: #fff;
+$bg-color: #202124;
+$warn-color: #f42c15;
+$gold-color: #ffc700;
+$primary-color: #3883fa;
+$light-primary: #6c7a86;
+$secondary-color: #06df06;
+$light-secondary: #4cfffa;
+$background-color: #4c4c4c;
+$dark-background: #303443;
+
+$page-padding: 2rem 4rem;
+$bar-height: 35px;
+$editor-header-height: 4rem;
+$editor-height: 75vh;
+$padding-1: 1rem;
+$radius: 7px;
+$radius-top: 7px 7px 0 0;
+$radius-bottom: 0 0 7px 7px;
