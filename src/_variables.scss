@@ -6,9 +6,9 @@
 
 // Import external stylesheets
 @import "~jsoneditor/dist/jsoneditor.min.css";
-@import url("https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@500&family=Poppins:ital,wght@1,400&family=Signika+Negative&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap');
 
-$font-family: "Poppins", sans-serif;
+$font-family: 'Roboto Mono', monospace;
 $white: #fff;
 $bg-color: #202124;
 $warn-color: #f42c15;
