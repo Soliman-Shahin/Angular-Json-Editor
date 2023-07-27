@@ -1,37 +1,5 @@
-<input
-  class="importJson"
-  id="import-json"
-  type="file"
-  (change)="onFileChange($event)"
-  accept=".json"
-/>
-<label for="import-json" title="import a json file">
-  <fa-icon [icon]="faFileImport"></fa-icon>
-</label>
+<app-json-editor></app-json-editor>
 
-<button
-  class="exportJson"
-  id="export-json"
-  (click)="saveJson()"
-></button>
-<label for="export-json" title="save as a json file">
-  <fa-icon [icon]="faFileExport"></fa-icon>
-</label>
-
-<button
-  class="clearJson"
-  id="clear-json"
-  (click)="clear()"
-></button>
-<label for="clear-json" title="clear json">
-  <fa-icon [icon]="faRemoveFormat"></fa-icon>
-</label>
-
-<json-editor
-  [options]="editorOptions"
-  [data]="json"
-  (change)="getData($event)"
-></json-editor>
 <a href="https://github.com/Soliman-Shahin" target="_blank" class="developer"
   >Soliman Shahin</a
 >

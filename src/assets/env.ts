@@ -3,7 +3,7 @@ export const env = {
   fileName: 'online-json-editor',
   fileType: 'json',
   editorOptions: {
-    modes: ['code', 'text', 'form', 'tree', 'view'],
+    modes: ['tree', 'form', 'view', 'text', 'code'],
   },
   initialData: {
     success: {

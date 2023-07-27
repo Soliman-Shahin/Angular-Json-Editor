@@ -6,8 +6,10 @@ import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AngJsoneditorModule } from '@maaxgr/ang-jsoneditor';
+import { JsonAppEditorComponent } from './components/json-editor/json-editor.component';
+import { ActionsComponent } from './components/actions/actions.component';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, JsonAppEditorComponent, ActionsComponent],
   imports: [
     BrowserModule,
     FontAwesomeModule,

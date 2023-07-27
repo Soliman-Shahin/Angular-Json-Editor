@@ -1,0 +1,10 @@
+<app-actions
+  (jsonExport)="onJsonExport()"
+  (jsonChange)="onFileChange($event)"
+></app-actions>
+
+<json-editor
+  [options]="editorOptions"
+  [data]="json"
+  (dataChange)="onJsonChange($event)"
+></json-editor>
