@@ -1,5 +1,9 @@
-.developer {
-  line-height: 3;
-  color: #3883fa;
-  text-decoration: none;
+mat-drawer-container {
+  height: 100% !important;
+}
+
+app-footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }

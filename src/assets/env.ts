@@ -1,4 +1,6 @@
 export const env = {
+  author: 'Soliman Shahin',
+  github: 'https://github.com/Soliman-Shahin',
   title: 'online json editor',
   fileName: 'online-json-editor',
   fileType: 'json',
@@ -11,4 +13,5 @@ export const env = {
       status_code: 200,
     },
   },
+  theme: 'light',
 };

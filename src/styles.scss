@@ -1,11 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+// Define theme
+@import "app/theme";
+
+// Define bootstrap
+@import "~bootstrap/dist/css/bootstrap.css";
+
 // Define variables
-@import "./variables";
+@import "assets/variables";
+
+// Define json theme
+@import "assets/json-theme";
 
 // Use nesting and variables
 html {
   background-color: $bg-color;
-  padding: $page-padding;
+  height: 100% !important;
+  overflow: hidden !important;
 
   // Use mixins
   @include font();
@@ -40,136 +51,10 @@ html {
   }
 }
 
-.jsoneditor {
-  border: none !important;
-  .jsoneditor-menu {
-    background-color: $bg-color;
-    border: none !important;
-    height: $editor-header-height;
-    display: flex;
-    align-items: center;
-    .jsoneditor-poweredBy {
-      display: none !important;
-    }
-    .jsoneditor-search {
-      .jsoneditor-results {
-        color: $primary-color;
-        align-items: center;
-        display: flex;
-      }
-      .jsoneditor-frame {
-        border-radius: $radius;
-        height: $bar-height;
-        display: flex;
-        align-items: center;
-        margin-top: 0.5rem;
-      }
-    }
-  }
-  .jsoneditor-anchor {
-    .jsoneditor-contextmenu-root {
-      .jsoneditor-contextmenu {
-        .jsoneditor-menu {
-          height: max-content;
-          display: block;
-        }
-      }
-    }
-  }
-  .jsoneditor-navigation-bar {
-    height: $bar-height;
-    display: flex;
-    align-items: center;
-    border-radius: $radius-top;
-    padding-inline: $padding-1;
-    border: none;
-    color: $primary-color;
-    background-color: $dark-background;
-  }
-  .jsoneditor-outer {
-    height: $editor-height !important;
-    td.jsoneditor-tree {
-      background: transparent !important;
-    }
-    .jsoneditor-tree {
-      background: $background-color !important;
-      border-radius: $radius-bottom;
-      .jsoneditor-readonly {
-        color: $gold-color;
-      }
-      .jsoneditor-popover,
-      .jsoneditor-schema-error,
-      .jsoneditor td,
-      .jsoneditor textarea,
-      .jsoneditor th,
-      .jsoneditor-field,
-      .jsoneditor-value,
-      pre.jsoneditor-preview {
-        color: $primary-color;
-      }
-      .jsoneditor-value.jsoneditor-string {
-        color: $secondary-color !important;
-      }
-      .jsoneditor-value.jsoneditor-number {
-        color: $warn-color !important;
-      }
-      .jsoneditor-field.jsoneditor-highlight,
-      .jsoneditor-field[contenteditable="true"]:focus,
-      .jsoneditor-field[contenteditable="true"]:hover,
-      .jsoneditor-value.jsoneditor-highlight,
-      .jsoneditor-value[contenteditable="true"]:focus,
-      .jsoneditor-value[contenteditable="true"]:hover {
-        background-color: $light-primary;
-        border: none;
-        border-radius: $radius;
-      }
-    }
-    textarea.jsoneditor-text {
-      color: $primary-color !important;
-      border-radius: $radius-top;
-      background: $background-color !important;
-      padding: $padding-1;
-    }
-    .ace-jsoneditor.ace_editor,
-    textarea.jsoneditor-text.ace_editor {
-      border-radius: $radius-top;
-    }
-    .ace-jsoneditor {
-      .ace_gutter {
-        background: $dark-background;
-        color: $light-primary;
-      }
-      .ace_scroller {
-        background: $background-color;
-      }
-      .ace_text-layer {
-        color: $primary-color;
-      }
-      .ace_variable {
-        color: $light-secondary;
-      }
-      .ace_indent-guide {
-        background: none;
-      }
-      .ace_string {
-        color: $secondary-color;
-      }
-      .ace_marker-layer .ace_active-line {
-        background: $light-primary;
-      }
-      .ace_marker-layer .ace_selection {
-        background: $dark-background;
-      }
-    }
-  }
-  .jsoneditor-statusbar {
-    height: $bar-height;
-    display: flex;
-    align-items: center;
-    border-radius: $radius-bottom;
-    padding-inline: $padding-1;
-    border: none;
-    color: $white;
-    background-color: $dark-background;
-  }
+body {
+  height: 100% !important;
+  overflow: hidden !important;
 }
+
+// Define scrollbar theme
+@import "assets/scrollbar";

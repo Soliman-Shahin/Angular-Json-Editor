@@ -1,0 +1,17 @@
+<mat-toolbar class="header-border" color="primary">
+  <!-- <button
+    mat-icon-button
+    class="icon"
+    aria-label="icon-button with menu icon"
+    (click)="toggleSideNav.emit()"
+  >
+    <mat-icon>menu</mat-icon>
+  </button> -->
+  <span>DEV Tools</span>
+  <span class="spacer"></span>
+
+  <mat-slide-toggle
+    [checked]="themeService.themeMode === 'dark'"
+    (change)="themeService.themeMode = $event.checked ? 'dark' : 'light'"
+  ></mat-slide-toggle>
+</mat-toolbar>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { env } from '../assets/env';
+import { env } from 'src/assets/env';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +8,6 @@ import { env } from '../assets/env';
 })
 export class AppComponent {
   title = env.title;
+
+  constructor() {}
 }

@@ -1,5 +1,15 @@
-<app-json-editor></app-json-editor>
+<mat-drawer-container autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <app-side-nav></app-side-nav>
+  </mat-drawer>
 
-<a href="https://github.com/Soliman-Shahin" target="_blank" class="developer"
-  >Soliman Shahin</a
->
+  <div class="sidenav-content">
+    <app-header
+      (toggleSideNav)="drawer.toggle()"
+    ></app-header>
+
+    <router-outlet></router-outlet>
+
+    <app-footer></app-footer>
+  </div>
+</mat-drawer-container>

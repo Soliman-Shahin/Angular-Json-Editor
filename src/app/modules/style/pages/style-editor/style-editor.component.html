@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-auto"><h2>CSS to SCSS Converter</h2></div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <textarea
+        class="sheet"
+        [(ngModel)]="cssInput"
+        rows="10"
+        cols="50"
+      ></textarea>
+    </div>
+    <div class="col-md-6">
+      <textarea
+        class="sheet"
+        [(ngModel)]="scssOutput"
+        rows="10"
+        cols="50"
+        readonly
+      ></textarea>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <button mat-flat-button color="primary" (click)="convertCssToScss()">
+        <mat-icon>settings</mat-icon>
+        Convert
+      </button>
+    </div>
+  </div>
+</div>

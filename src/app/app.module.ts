@@ -1,22 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-import { AngJsoneditorModule } from '@maaxgr/ang-jsoneditor';
-import { JsonAppEditorComponent } from './components/json-editor/json-editor.component';
-import { ActionsComponent } from './components/actions/actions.component';
 @NgModule({
-  declarations: [AppComponent, JsonAppEditorComponent, ActionsComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    FontAwesomeModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    AngJsoneditorModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

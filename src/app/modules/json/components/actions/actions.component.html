@@ -1,0 +1,22 @@
+<mat-button-toggle-group class="actions">
+  <mat-button-toggle value="import" title="import a json file">
+    <input
+      class="importJson"
+      #importJson
+      type="file"
+      (change)="jsonChange.emit($event)"
+      accept=".json"
+    />
+    <mat-icon (click)="importJson.click()" >file_upload</mat-icon>
+  </mat-button-toggle>
+  <mat-button-toggle
+    value="export"
+    title="save as a json file"
+    (click)="jsonExport.emit()"
+  >
+    <mat-icon>file_download</mat-icon>
+  </mat-button-toggle>
+  <mat-button-toggle value="clear" title="clear json" (click)="onJsonClear()">
+    <mat-icon>clear</mat-icon>
+  </mat-button-toggle>
+</mat-button-toggle-group>

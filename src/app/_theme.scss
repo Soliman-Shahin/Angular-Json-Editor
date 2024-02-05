@@ -1,0 +1,32 @@
+@use "@angular/material" as mat;
+
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+@include mat.core();
+
+// Light theme
+$app-light-theme: mat.define-light-theme((
+  color: (
+    primary: mat.define-palette(mat.$indigo-palette),
+    accent: mat.define-palette(mat.$pink-palette),
+    warn: mat.define-palette(mat.$red-palette),
+  )
+));
+
+// Dark theme
+$app-dark-theme: mat.define-dark-theme((
+  color: (
+    primary: mat.define-palette(mat.$indigo-palette),
+    accent: mat.define-palette(mat.$pink-palette),
+    warn: mat.define-palette(mat.$red-palette),
+  )
+));
+
+
+// Apply the light theme by default
+@include mat.all-component-themes($app-light-theme);
+
+// Apply the dark theme to a parent element with .dark-theme class
+.dark-theme {
+  @include mat.all-component-themes($app-dark-theme);
+}
